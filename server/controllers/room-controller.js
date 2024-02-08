@@ -34,13 +34,33 @@ export const updateRoom = async (req,res,next)=>{
     } 
 }
 
+//update room availability
+export const updateRoomAvailability = async (req,res,next)=>{
+    try { 
+        //no findByid bec not updating room; updating room number.
+        //id ;that we pass in router url 
+         await Room.updateOne(
+         {"roomNumbers._id" : req.params.id},
+         {
+            $push:{
+                //to update nested properties
+                "roomNumbers.$.unavailableDates":req.body.dates
+            },
+         }
+        )
+     res.status(200).json("Room status updated");
+    }catch(err){
+        next(err);
+    } 
+};
+
 //delete room
 
 export const deleteRoom = async (req,res,next)=>{
     const hotelId = req.params.hotelId;
     try{
         //wont return anyth since only deleting
-        await Room.findByIdAndDelete(req.params.id);
+        await Room.findByIdAndDelete(req.params.id)
         try{
             await Hotel.findByIdAndUpdate(hotelId, 
             {$pull: {rooms: req.params.id},
