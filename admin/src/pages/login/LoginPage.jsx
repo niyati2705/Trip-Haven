@@ -27,11 +27,24 @@ const Login = ()=> {
     e.preventDefault();
     //not passing payload; it onlu updates loading state
     dispatch({type:"LOGIN_START"})
-    try{ //?
+    try{ //blackb
+        // const headers = {
+        //     "Content-Type": "application/json",
+        //     Authorization: `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`,
+        //   };
+        //?
+        // const res = await axios.post("/auth/login", {}, {headers})
+        //admin condition success
         const res = await axios.post("/auth/login", credentials);
-        dispatch({type:"LOGIN_SUCCESS", payload: res.data.details});
-        navigate("/")
-    }catch(err){
+        if(res.data.isAdmin){
+            dispatch({type:"LOGIN_SUCCESS", payload: res.data.details}); 
+            navigate("/")
+            }
+        else{ //admin condition fails
+                dispatch({type:"LOGIN_FAILURE", payload:{message: "You are not allowed"}})
+            }
+
+        }catch(err){
         dispatch({type:"LOGIN_FAILURE", payload:err.response.data})
     }
     }
@@ -44,10 +57,10 @@ const Login = ()=> {
         <div className="lContainer">
 
             <input type="text" placeholder="username" onChange={handleChange}
-            id="username" className="LInput" />
+            id="username" className="LInput" maxLength={20} />
 
             <input type="password" placeholder="password" onChange={handleChange}
-            id="password" className="LInput" />
+            id="password" className="LInput" maxLength={20} />
 
             <button disabled={loading} onClick={handleLogin}className="lButton">Login</button>
             {error &&
@@ -60,3 +73,8 @@ const Login = ()=> {
    )
  };
 export default Login;
+
+// In this example, the fetch API is being used to send the credentials in the body of the request as a URL-encoded string. This can help reduce the size of the request body and prevent the "Request Header Fields Too Large" error.Note that this method requires the credentials to be base64-encoded, which is why the btoa function is used to encode the username and password.
+
+
+
