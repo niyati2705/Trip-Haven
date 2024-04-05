@@ -36,12 +36,13 @@ export const login = async(req,res,next)=>{
           return next(createError(400, 'Invalid Password or username'));
         //if password correct
 
-        const token = jwt.sign({id:user._id, isAdmin:user.isAdmin} , process.env.JWT_SECRET_KEY);
+        // const token = jwt.sign({id:user._id, isAdmin:user.isAdmin} , process.env.JWT_SECRET_KEY);
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);
         //
 
         //to not send passwprd
         const {password, isAdmin, ...otherDetails} = user._doc;
-
+    
         res.cookie("access_token", token, {
             httpOnly: true,
         })

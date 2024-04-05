@@ -8,17 +8,22 @@ import {useLocation} from "react-router-dom";
 import {format} from "date-fns";
 import { DateRange } from "react-date-range";
 import useFetch from "../../hooks/useFetch";
+import Weather from "../../components/weather/weather";
+
+
+
+
 
 const List = () => {
 
   const location = useLocation();
   console.log(location);
-  const [destination, setDestination] = useState(location.state.destination);
+  const [destination, setDestination] = useState(location.state?.destination || "");
   // console.log(destination);
     const [dates, setDates] = useState(location.state.dates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
-
+ 
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
@@ -105,11 +110,12 @@ const List = () => {
           ))}
           </>}
       </div> 
+     <Weather destination={destination}/>
     </div>
   </div>
   </div>
   )
 }
-
+ 
 
 export default List

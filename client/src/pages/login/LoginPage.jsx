@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/authContext";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-const Login = ()=> {
+const Login = ({role})=> {
     //create credentials
     const[credentials, setCredentials]=useState({
         username: undefined,
@@ -28,7 +28,7 @@ const Login = ()=> {
     //not passing payload; it onlu updates loading state
     dispatch({type:"LOGIN_START"})
     try{ //?
-        const res = await axios.post("/auth/login", credentials);
+        const res = await axios.post("/auth/login", credentials, role);
         dispatch({type:"LOGIN_SUCCESS", payload: res.data.details});
         navigate("/")
     }catch(err){
@@ -42,6 +42,8 @@ const Login = ()=> {
   return (
     <div className="login">
         <div className="lContainer">
+
+            <h1> TripHaven</h1>
 
             <input type="text" placeholder="username" onChange={handleChange}
             id="username" className="LInput" />

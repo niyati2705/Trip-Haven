@@ -34,7 +34,7 @@ const Featured = () => {
 
       <div className="featuredItem">
         <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/f/fc/BeachFun.jpg" alt="kasol img" className="featuredImg" />
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Mountains%2C_Manali%2C_Himachal_Pradesh.jpg" alt="kasol img" className="featuredImg" />
         <div className="featuredTitle">
           <h1>Manali</h1>
           <h2>{data[2]} properties</h2>

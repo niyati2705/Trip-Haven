@@ -7,8 +7,21 @@ const INITIAL_STATE={
         adult:undefined,
         children:undefined,
         room: undefined,
-    }
+    },
+    searchResults: null,
+    loading:false,
 }
+// const INITIAL_STATE = {
+//     city: undefined,
+//     dates: [], // empty array instead of [{}]
+//     options: {
+//       adult: 1,
+//       children: 0,
+//       room: 1,
+//     },
+//     searchResults: null,
+//   };
+
 //export; bec we will use it in diff components
 export const SearchContext = createContext(INITIAL_STATE);
 
@@ -20,10 +33,12 @@ const SearchReducer = (state,action) =>{
                 return action.payload
         case "RESET_SEARCH":
                 return  INITIAL_STATE 
+        case "SET_SEARCH_RESULTS":
+                    return { ...state, searchResults: action.payload, loading: false };
         default: return state;
     }
 }
-
+ 
 export const SearchContextProvider = ({children}) =>{
     const [state, dispatch]= useReducer(SearchReducer, INITIAL_STATE);
 
@@ -34,6 +49,7 @@ export const SearchContextProvider = ({children}) =>{
              city:state.city,
              dates: state.dates, 
              options: state.options,
+             searchResults: state.searchResults,
              dispatch,
              }}
         >

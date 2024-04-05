@@ -38,7 +38,7 @@ const Login = ()=> {
         const res = await axios.post("/auth/login", credentials);
         if(res.data.isAdmin){
             dispatch({type:"LOGIN_SUCCESS", payload: res.data.details}); 
-            navigate("/")
+            navigate("/");
             }
         else{ //admin condition fails
                 dispatch({type:"LOGIN_FAILURE", payload:{message: "You are not allowed"}})
@@ -55,6 +55,8 @@ const Login = ()=> {
   return (
     <div className="login">
         <div className="lContainer">
+
+            <h1> TripHaven</h1>
 
             <input type="text" placeholder="username" onChange={handleChange}
             id="username" className="LInput" maxLength={20} />
