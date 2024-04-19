@@ -27,9 +27,14 @@ A boooking application to search your vacation destination and get its hotels, r
 
 ### Weather Feature: Built using OpenWeatherMap API.
 
-## Demo video:
+## Demo videos:
 
-<a href="https://github.com/niyati2705/Trip-Haven/assets/108968934/d5910d0a-8b24-4447-a5db-de97b8b41260" alt="demo video"></a>
+<a href="https://github.com/niyati2705/Trip-Haven/assets/108968934/d5910d0a-8b24-4447-a5db-de97b8b41260" alt=" client demo video"></a>
+
+<a href="https://github.com/niyati2705/Trip-Haven/assets/108968934/a85845e3-116e-478c-8363-d2befb28ae60" alt="demo video"></a>
+
+
+
 
 
 
