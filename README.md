@@ -3,7 +3,7 @@ A boooking application to search your vacation destination and get its hotels, r
 
 ## Features
 
-Hotel Search: Users can search for hotels by entering a city name.
+<b>Hotel Search</b> : Users can search for hotels by entering a city name.
 
 Weather Information: Users can view the current weather for the selected city.
 
