@@ -3,29 +3,29 @@ A boooking application to search your vacation destination and get its hotels, r
 
 ## Features
 
-### Hotel Search : Users can search for hotels by entering a city name.
+Hotel Search : Users can search for hotels by entering a city name.
 
-### Weather Information: Users can view the current weather for the selected city.
+Weather Information : Users can view the current weather for the selected city.
 
-### Hotel Details: Users can view detailed information about each hotel, including descriptions and images.
+Hotel Details : Users can view detailed information about each hotel, including descriptions and images.
 
-### Room Reservation: Users can check room availability and make reservations for their desired dates.
+Room Reservation : Users can check room availability and make reservations for their desired dates.
 
-### Concurrency Control: Prevents concurrent booking on the same dates from different users.
+Concurrency Control : Prevents concurrent booking on the same dates from different users.
 
-### Admin Panel: Admins can perform CRUD operations for hotels, rooms, and users.
+Admin Panel : Admins can perform CRUD operations for hotels, rooms, and users.
 
 ## Built with
 
-### Frontend: Built with React.js, CSS, and other modern libraries, ensuring a smooth and responsive user experience.
+Frontend : Built with React.js, CSS, and other modern libraries, ensuring a smooth and responsive user experience.
 
-### Backend: Built with Node.js and Express.js, providing a robust and scalable backend architecture, ensuring fast and secure server-side operations.
+Backend : Built with Node.js and Express.js, providing a robust and scalable backend architecture, ensuring fast and secure server-side operations.
 
-### Database: Built with MongoDB, ensuring a flexible and scalable data storage solution.Store and manage user data and media files using MongoDB.
+Database : Built with MongoDB, ensuring a flexible and scalable data storage solution.Store and manage user data and media files using MongoDB.
 
-### Authentication: Built with JSON Web Tokens and bcrypt, ensuring a secure and personalized user experience.
+Authentication : Built with JSON Web Tokens and bcrypt, ensuring a secure and personalized user experience.
 
-### Weather Feature: Built using OpenWeatherMap API.
+Weather Feature : Built using OpenWeatherMap API.
 
 ## Demo videos:
 
